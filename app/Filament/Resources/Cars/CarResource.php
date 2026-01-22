@@ -59,7 +59,7 @@ class CarResource extends Resource
                 Select::make('status')
                     ->options([
                         'tersedia' => 'Tersedia',
-                        'tidak tersedia' => 'Tidak Tersedia',
+                        'tidak_tersedia' => 'Tidak Tersedia',
                     ]),
             ]);
     }
