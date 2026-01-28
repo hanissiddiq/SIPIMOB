@@ -31,7 +31,9 @@ class BookingForm
                     ->displayFormat('d/m/Y'),
                 Select::make('status')
                     ->options([
-                        'dibooking' => 'Dibooking',
+                        'pending' => 'Pending',
+                        'approved' => 'Approved',
+                        'rejected' => 'Rejected',
                         'dikembalikan' => 'Dikembalikan',
                     ]),
             ]);

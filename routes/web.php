@@ -9,6 +9,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/cars', [CarController::class, 'index'])->name('list-car');
     Route::post('/booking/{car}', [BookingController::class, 'store']);
     Route::post('/booking/{booking}/return', [BookingController::class, 'return']);
+    Route::get('/my-bookings', [BookingController::class, 'myBookings'])
+        ->name('my-bookings');
+
+    Route::get('/booking/create', [BookingController::class, 'create']);
+    Route::post('/booking', [BookingController::class, 'store']);
 });
  Route ::get('/',function(){return view ('welcome');});
  Route::get('/dashboard',function()

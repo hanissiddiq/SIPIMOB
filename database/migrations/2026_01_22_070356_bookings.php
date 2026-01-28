@@ -18,7 +18,13 @@ return new class extends Migration
             $table->foreignId('car_id')->constrained('cars')->onDelete('cascade');
             $table->date('start_date');
             $table->date('end_date');
-            $table->enum('status', ['dibooking', 'dikembalikan'])->default('dibooking');
+            // $table->enum('status', ['dibooking', 'dikembalikan'])->default('dibooking');
+            $table->enum('status', [
+                        'pending',
+                        'approved',
+                        'rejected',
+                        'dikembalikan'
+                    ])->default('pending');
             $table->timestamps();
         });
     }
