@@ -25,7 +25,7 @@
                         <img src="{{ asset('storage/' . $booking->car->image) }}" class="w-full h-full object-cover" alt="icon">
                     </div>
                     <div class="flex flex-col gap-3 w-full">
-                        <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">{{ $booking->car->name }} - BK 1940 PQ</h3>
+                        <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">{{ $booking->car->name }} - {{ $booking->car->plate_number }}</h3>
                         <hr class="border-[#F1F2F6]">
                         <div class="flex items-center gap-[6px]">
                             <img src="assets/images/icons/location.svg" class="w-5 h-5 flex shrink-0" alt="icon">

@@ -36,7 +36,7 @@
                         <option value="">-- Pilih Mobil --</option>
                         @foreach($cars as $car)
                             <option value="{{ $car->id }}">
-                                {{ $car->name }} - {{ $car->brand }}
+                                {{ $car->name }} - {{ $car->plate_number }}
                             </option>
                         @endforeach
                     </select>

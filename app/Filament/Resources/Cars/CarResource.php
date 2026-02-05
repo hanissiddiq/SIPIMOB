@@ -56,6 +56,9 @@ class CarResource extends Resource
                 TextInput::make('color')
                     ->required()
                     ->maxLength(255),
+                TextInput::make('plate_number')
+                    ->required()
+                    ->maxLength(255),
                 Select::make('status')
                     ->options([
                         'tersedia' => 'Tersedia',
@@ -88,6 +91,8 @@ class CarResource extends Resource
                 TextColumn::make('year')
                     ->searchable(),
                 TextColumn::make('color')
+                    ->searchable(),
+                TextColumn::make('plate_number')
                     ->searchable(),
                 TextColumn::make('status')
                 ->badge()

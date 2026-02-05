@@ -29,7 +29,8 @@
 
         <div id="TopNav" class="relative flex items-center justify-between px-5 mt-[60px]">
             <div class="flex flex-col gap-1">
-                <p>Good day,</p>
+                <p> Hi, <span class="font-bold text-ngekos-orange">{{ Auth::user()->name }}</span> </p>
+                {{-- <p>Have a nice day,</p> --}}
                 <h1 class="font-bold text-xl leading-[30px]">Explore The Car</h1>
             </div>
             <a href="#"
@@ -75,7 +76,7 @@
                                         <div class="flex items-center gap-[6px]">
                                             <img src="assets/images/icons/profile-2user.svg" class="w-5 h-5 flex shrink-0"
                                                 alt="icon">
-                                            <p class="text-sm text-ngekos-grey">BL 1662 PQT</p>
+                                            <p class="text-sm text-ngekos-grey">{{ $car->plate_number }}</p>
                                         </div>
                                         <hr class="border-[#F1F2F6]">
                                         <p class="font-semibold text-lg text-ngekos-orange">
