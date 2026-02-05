@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('model');
             $table->year('year');
             $table->string('color');
+            $table->string('plate_number');
             $table->enum('status', ['tersedia', 'tidak_tersedia'])->default('tersedia');
             $table->timestamps();
         });
