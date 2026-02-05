@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\Users;
 
 use App\Models\User;
+use App\Filament\Resources\Users\Pages\ManageUsers;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -15,6 +16,10 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Section;
+
+// use Filament\Schemas\Components\Section;
+// use Filament\Forms\Components\TextInput;
+// use Filament\Schemas\Components\Section;
 
 class UserResource extends Resource
 {
@@ -35,8 +40,7 @@ class UserResource extends Resource
     {
         return $schema
             ->components([
-                Section::make('User Information')
-                    ->schema([
+                
                         TextInput::make('name')
                             ->required()
                             ->maxLength(255),
@@ -55,9 +59,7 @@ class UserResource extends Resource
                                     ? bcrypt($state)
                                     : null
                             )
-                            ->dehydrated(fn ($state) => filled($state)),
-                    ])
-                    ->columns(2),
+                            ->dehydrated(fn ($state) => filled($state)),                
             ]);
     }
 
