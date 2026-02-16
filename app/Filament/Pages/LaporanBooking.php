@@ -10,6 +10,14 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Form;
 
+use Filament\Tables\Actions\ExportAction;
+use Filament\Tables\Actions\ExportBulkAction;
+
+
+use App\Exports\LaporanBookingExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Filament\Actions\Action;
+
 class LaporanBooking extends Page implements Tables\Contracts\HasTable, Forms\Contracts\HasForms
 {
     use Tables\Concerns\InteractsWithTable;
@@ -28,6 +36,22 @@ class LaporanBooking extends Page implements Tables\Contracts\HasTable, Forms\Co
 
     public $bulan;
     public $tahun;
+
+    protected function getHeaderActions(): array
+{
+    return [
+        Action::make('export')
+            ->label('Download Excel')
+            ->icon('heroicon-o-arrow-down-tray')
+            ->action(function () {
+                return Excel::download(
+                    new LaporanBookingExport($this->tahun),
+                    'laporan-booking-' . $this->tahun . '.xlsx'
+                );
+            }),
+    ];
+}
+
 
     public function mount(): void
     {
